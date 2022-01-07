@@ -20,10 +20,32 @@ endfunction
 function! s:currentIME()
 py3 << EOF
 import vim
-script_dir = vim.eval('s:script_dir')
-sys.path.insert(0, script_dir)
-import ime
-vim.command("let s:ime_result = %d" % int(ime.current_ime()))
+import plistlib
+from pathlib import Path
+
+HIRIGANA="com.apple.inputmethod.Japanese"
+KATANA="com.apple.inputmethod.Japanese.Katakana"
+ROMAN="com.apple.inputmethod.Roman"
+
+def current_ime():
+    home = Path.home()
+    str_plist_path = ('Library/Preferences/com.apple.HIToolbox.plist')
+    path = Path(str_plist_path)
+    with open(home / path, 'rb') as fp:
+        pl = plistlib.load(fp)
+
+    # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
+    try:
+        ime = pl["AppleSelectedInputSources"][1]['Input Mode']
+        if ime == ROMAN:
+            return 1
+        else:
+            return 0
+    except Exception:
+        print(pl["AppleSelectedInputSources"])
+        return 0
+
+vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
 let s:capstatus = system('xset -q | grep "Caps Lock" | awk ''{print $4}''')
 if s:capstatus[0:-2] == 'on'
