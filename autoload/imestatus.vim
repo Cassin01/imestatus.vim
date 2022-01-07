@@ -10,7 +10,6 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! imestatus#imestatus_init()
-let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
 augroup IMEInsert
     autocmd InsertCharPre * :call s:currentIME()
 augroup END
