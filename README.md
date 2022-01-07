@@ -15,3 +15,7 @@ Plug 'Cassin/imestatus.vim'
 - 半角英数(Roman): steelblue
 
 - Others(ひらがなetc): orange
+
+## 参考
+
+[【Windows/msys2】EmacsでIMEのon/off時にカーソルの色を変更する](https://www.yokoweb.net/2017/06/23/msys2-emacs-ime-cursor/)
