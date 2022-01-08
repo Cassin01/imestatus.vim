@@ -12,6 +12,7 @@ set cpo&vim
 function! imestatus#imestatus_init()
 augroup IMEInsert
     autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
+    set updatetime=10
 augroup END
 endfunction
     " Show current IME status on cursor color. {{{
