@@ -39,9 +39,9 @@ def current_ime():
             return 1
         else:
             return 0
-    else: # have not been reflected on the file. I treat as ROMAN
+    else: # have not been reflected on the file. I treat as NOT ROMAN
         print(pl["AppleSelectedInputSources"])
-        return 1
+        return 0
 
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
