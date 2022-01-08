@@ -41,7 +41,7 @@ def current_ime():
             return 0
     else: # have not been reflected on the file. I treat as GREEN
         print(pl["AppleSelectedInputSources"])
-        return 1
+        return 2
 
     # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
     # try:
@@ -63,13 +63,13 @@ if s:capstatus[0:-2] == 'on'            " red
     set guicursor+=i:ver25-iCursor
 elseif s:ime_result == 0                " orange
     highlight iCursor guibg=#cc6666
-    set guicursor+=i:ver25-iCursor
+    "set guicursor+=i:ver25-iCursor
 elseif s:ime_result == 2                " green, have not been reflected
     highlight ICursor guibg=#66cccc
-    set guicursor+=i:ver25-iCursor
+    " set guicursor+=i:ver25-iCursor
 else                                    " steelblue
     highlight iCursor guibg=#5FAFFF
-    set guicursor+=i:ver25-iCursor
+    " set guicursor+=i:ver25-iCursor
 endif
 endfunction
     "}}}
