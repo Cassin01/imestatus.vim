@@ -39,7 +39,7 @@ def current_ime():
             return 1
         else:
             return 0
-    else: # have not refrected on the file. I treat as roman.
+    else: # have not been reflected on the file. I treat as GREEN
         print(pl["AppleSelectedInputSources"])
         return 1
 
@@ -52,7 +52,7 @@ def current_ime():
     #         return 0
     # except Exception
     #     print(pl["AppleSelectedInputSources"])
-    #     return 1
+    #     return 2
 
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
@@ -63,6 +63,9 @@ if s:capstatus[0:-2] == 'on'            " red
     set guicursor+=i:ver25-iCursor
 elseif s:ime_result == 0                " orange
     highlight iCursor guibg=#cc6666
+    set guicursor+=i:ver25-iCursor
+elseif s:ime_result == 2                " green, have not been reflected
+    highlight ICursor guibg=#66cccc
     set guicursor+=i:ver25-iCursor
 else                                    " steelblue
     highlight iCursor guibg=#5FAFFF
