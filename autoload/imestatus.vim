@@ -49,13 +49,13 @@ let s:capstatus = system('xset -q | grep "Caps Lock" | awk ''{print $4}''')
 if s:capstatus[0:-2] == 'on'            " red
     echom 'called'
     highlight iCursor guibg=#8F1D21
-    " set guicursor+=i:ver25-iCursor
+    set guicursor+=i:ver25-iCursor
 elseif s:ime_result == 0                " orange
     highlight iCursor guibg=#cc6666
-    "set guicursor+=i:ver25-iCursor
+    set guicursor+=i:ver25-iCursor
 else                                    " steelblue
     highlight iCursor guibg=#5FAFFF
-    " set guicursor+=i:ver25-iCursor
+    set guicursor+=i:ver25-iCursor
 endif
 endfunction
     "}}}
