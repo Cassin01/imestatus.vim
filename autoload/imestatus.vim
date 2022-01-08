@@ -33,16 +33,26 @@ def current_ime():
     with open(home / path, 'rb') as fp:
         pl = plistlib.load(fp)
 
-    # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
-    try:
+    if len(pl["AppleSelectedInputSources"]) == 2:
         ime = pl["AppleSelectedInputSources"][1]['Input Mode']
         if ime == ROMAN:
             return 1
         else:
             return 0
-    except Exception:
+    else: # have not refrected on the file
         print(pl["AppleSelectedInputSources"])
         return 0
+
+    # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
+    # try:
+    #     ime = pl["AppleSelectedInputSources"][1]['Input Mode']
+    #     if ime == ROMAN:
+    #         return 1
+    #     else:
+    #         return 0
+    # except Exception:
+    #     print(pl["AppleSelectedInputSources"])
+    #     return 0
 
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
