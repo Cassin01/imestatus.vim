@@ -50,12 +50,21 @@ if s:capstatus[0:-2] == 'on'            " red
     echom 'called'
     highlight iCursor guifg=#8F1D21
     set guicursor=n-v-c:block-Cursor
+    set guicursor+=i:ver100-iCursor
+    set guicursor+=n-v-c:blinkon0
+    set guicursor+=i:blinkwait10
 elseif s:ime_result == 0                " orange
     highlight iCursor guifg=#cc6666
     set guicursor=n-v-c:block-Cursor
+    set guicursor+=i:ver100-iCursor
+    set guicursor+=n-v-c:blinkon0
+    set guicursor+=i:blinkwait10
 else                                    " steelblue
     highlight iCursor guifg=#5FAFFF
     set guicursor=n-v-c:block-Cursor
+    set guicursor+=i:ver100-iCursor
+    set guicursor+=n-v-c:blinkon0
+    set guicursor+=i:blinkwait10
 endif
 endfunction
     "}}}
