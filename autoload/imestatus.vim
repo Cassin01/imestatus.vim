@@ -52,6 +52,7 @@ if s:capstatus[0:-2] == 'on'            " red
     set guicursor+=i:ver25-iCursor
 elseif s:ime_result == 0                " orange
     highlight Cursor guifg=#cc6666
+    hi CursorIM       guifg=#F8F8F8 guibg=#002947"#5F5A60
     set guicursor+=i:ver25-iCursor
 else                                    " steelblue
     highlight Cursor guifg=#5FAFFF
