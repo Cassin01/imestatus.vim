@@ -39,9 +39,9 @@ def current_ime():
             return 1
         else:
             return 0
-    else: # have not refrected on the file
+    else: # have not refrected on the file. I treat as roman.
         print(pl["AppleSelectedInputSources"])
-        return 0
+        return 1
 
     # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
     # try:
@@ -50,21 +50,21 @@ def current_ime():
     #         return 1
     #     else:
     #         return 0
-    # except Exception:
+    # except Exception
     #     print(pl["AppleSelectedInputSources"])
-    #     return 0
+    #     return 1
 
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
 let s:capstatus = system('xset -q | grep "Caps Lock" | awk ''{print $4}''')
-if s:capstatus[0:-2] == 'on'
+if s:capstatus[0:-2] == 'on'            " red
     echom 'called'
     highlight iCursor guibg=#8F1D21
     set guicursor+=i:ver25-iCursor
-elseif s:ime_result == 0
+elseif s:ime_result == 0                " orange
     highlight iCursor guibg=#cc6666
     set guicursor+=i:ver25-iCursor
-else
+else                                    " steelblue
     highlight iCursor guibg=#5FAFFF
     set guicursor+=i:ver25-iCursor
 endif
