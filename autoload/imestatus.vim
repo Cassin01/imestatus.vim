@@ -39,20 +39,9 @@ def current_ime():
             return 1
         else:
             return 0
-    else: # have not been reflected on the file. I treat as GREEN
+    else: # have not been reflected on the file. I treat as ROMAN
         print(pl["AppleSelectedInputSources"])
-        return 2
-
-    # print(pl["AppleSelectedInputSources"][1]['Input Mode'])
-    # try:
-    #     ime = pl["AppleSelectedInputSources"][1]['Input Mode']
-    #     if ime == ROMAN:
-    #         return 1
-    #     else:
-    #         return 0
-    # except Exception
-    #     print(pl["AppleSelectedInputSources"])
-    #     return 2
+        return 1
 
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
@@ -64,9 +53,6 @@ if s:capstatus[0:-2] == 'on'            " red
 elseif s:ime_result == 0                " orange
     highlight iCursor guibg=#cc6666
     "set guicursor+=i:ver25-iCursor
-elseif s:ime_result == 2                " green, have not been reflected
-    highlight ICursor guibg=#66cccc
-    " set guicursor+=i:ver25-iCursor
 else                                    " steelblue
     highlight iCursor guibg=#5FAFFF
     " set guicursor+=i:ver25-iCursor
