@@ -46,16 +46,17 @@ def current_ime():
 vim.command("let s:ime_result = %d" % int(current_ime()))
 EOF
 let s:capstatus = system('xset -q | grep "Caps Lock" | awk ''{print $4}''')
-if s:capstatus[0:-2] == 'on'            " red
+if s:capstatus[0:-2] == 'on'            " Caps
     echom 'called'
-    highlight iCursor guibg=#91645A
+    highlight iCursor guibg=#91645a
     set guicursor=i:ver25-iCursor
-elseif s:ime_result == 0                " orange
-    highlight iCursor guibg=#87915A
+elseif s:ime_result == 0                " Kana
+    "highlight iCursor guibg=#5A9180
+    highlight iCursor guibg=#5a9164
     set guicursor=i:ver25-iCursor
-else                                    " steelblue
+else                                    " Roman
     " highlight iCursor guibg=#5FAFFF
-    highlight iCursor guibg=#91805A
+    " highlight iCursor guibg=#91805A
     set guicursor=i:ver25-iCursor
 endif
 endfunction
