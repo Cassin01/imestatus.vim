@@ -9,11 +9,18 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
+
 function! imestatus#imestatus_init()
-augroup IMEInsert
-    autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
-    set updatetime=10
-augroup END
+" augroup IMEInsert
+"     autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
+"     " set updatetime=10
+" augroup END
+
+" TODO:
+" Vim の +timer を使ってみる
+" https://secret-garden.hatenablog.com/entry/2016/07/11/222728
+" 3000ミリ秒後に Disp() を呼び出す
+let timer = timer_start(4000, function("s:currentIME"))
 endfunction
     " Show current IME status on cursor color. {{{
 
