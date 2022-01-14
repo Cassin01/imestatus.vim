@@ -57,7 +57,7 @@ else                                    " roman steelblue
 endif
 endfunction
     "}}}
-    let s:timer = timer_start(1000, {-> execute("call 's:currentIME'")}, {"repeat": 3})
+    call timer_start(1000, funcref(s:currentIME), {"repeat": 3})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
