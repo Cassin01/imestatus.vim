@@ -52,7 +52,7 @@ else                                    " roman steelblue
     highlight iCursor guibg=#5FAFFF
     set guicursor=i:ver25-iCursor
 endif
-echo "hogehogehoge"
+echom "hogehogehoge"
 endfunction
     "}}}
 
