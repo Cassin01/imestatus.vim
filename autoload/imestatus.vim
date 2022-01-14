@@ -9,10 +9,7 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-
 " Show current IME status on cursor color. {{{
-
-let s:imet = {}
 function! s:currentIME(timer)
 py3 << EOF
 import vim
@@ -55,6 +52,7 @@ else                                    " roman steelblue
     highlight iCursor guibg=#5FAFFF
     set guicursor=i:ver25-iCursor
 endif
+echo "hogehogehoge"
 endfunction
     "}}}
 
