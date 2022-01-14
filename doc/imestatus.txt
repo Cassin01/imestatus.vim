@@ -1,0 +1,40 @@
+*imestatus.txt*
+
+Table of Contents                                *imestatus-table-of-contents*
+==============================================================================
+
+Description                                                         |imestatus|
+Installation                                           |imestatus-installation|
+Usage                                                         |imestatus-usage|
+License                                                         |fzf-imestatus|
+
+
+DESCRIPTION                                                        *imestatus*
+==============================================================================
+
+imestatus.vim refrect caps-lock and ime on the cursor color
+
+
+INSTALLATION                                          *imestatus-installation*
+==============================================================================
+
+< Using vim-plug >____________________________________________________________~
+                                                        *fzf-vim-using-vim-plug*
+>
+    Plug 'cassin/imestatus.vim'
+<
+
+USAGE                                                        *imestatus-usage*
+==============================================================================
+ - Roman: steelblue
+ - Kana: orange
+ - Caps-lock: red
+
+LICENSE                                                        *fzf-imestatus*
+==============================================================================
+
+GPL-3.0
+
+
+==============================================================================
+vim:tw=78:sw=2:ts=2:ft=help:norl:nowrap:
