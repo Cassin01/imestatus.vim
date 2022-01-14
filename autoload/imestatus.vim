@@ -57,6 +57,7 @@ else                                    " roman steelblue
 endif
 endfunction
     "}}}
+let s:timer = timer_start(1000, IMEt.currentIME, {"repeat": 3})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
@@ -68,7 +69,6 @@ function! imestatus#imestatus_init()
 " Vim の +timer を使ってみる
 " https://secret-garden.hatenablog.com/entry/2016/07/11/222728
 " 3000ミリ秒後に Disp() を呼び出す
-let s:timer = timer_start(1000, IMEt.currentIME, {"repeat": 3})
 endfunction
 
 let &cpo = s:save_cpo
