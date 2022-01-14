@@ -9,11 +9,11 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-let IMEt = {}
 
 " Show current IME status on cursor color. {{{
 
-function! s:currentIME() abort
+let s:imet = {}
+function! s:imet.currentIME(id, data, event) abort
 py3 << EOF
 import vim
 import plistlib
@@ -57,7 +57,8 @@ else                                    " roman steelblue
 endif
 endfunction
     "}}}
-call timer_start(1000, funcref("s:currentIME"), {"repeat": 3})
+
+    call timer_start(1000, funcref("s:currentIME"), {"repeat": 3})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
