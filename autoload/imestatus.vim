@@ -25,6 +25,7 @@ endfunction
     " Show current IME status on cursor color. {{{
 
 function! s:currentIME()
+echom "current ime called!"
 py3 << EOF
 import vim
 import plistlib
