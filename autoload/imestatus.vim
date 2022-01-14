@@ -55,7 +55,7 @@ endif
 endfunction
     "}}}
 
-call timer_start(100, function("s:currentIME"), {"repeat": -1})
+call timer_start(1000, function("s:currentIME"), {"repeat": -1})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
