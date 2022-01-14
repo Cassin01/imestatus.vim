@@ -13,7 +13,7 @@ let IMEt = {}
 
 " Show current IME status on cursor color. {{{
 
-function! IMEt.currentIME() abort
+function! s:currentIME() abort
 py3 << EOF
 import vim
 import plistlib
@@ -57,7 +57,7 @@ else                                    " roman steelblue
 endif
 endfunction
     "}}}
-let s:timer = timer_start(1000, IMEt.currentIME, {"repeat": 3})
+    let s:timer = timer_start(1000, {-> execute("call 's:currentIME'")}, {"repeat": 3})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
