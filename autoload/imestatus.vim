@@ -56,7 +56,7 @@ echom "hogehogehoge"
 endfunction
     "}}}
 
-    call timer_start(1000, function("s:currentIME"))
+    call timer_start(1000, function("s:currentIME"), {"repeat": -1})
 
 function! imestatus#imestatus_init()
 " augroup IMEInsert
