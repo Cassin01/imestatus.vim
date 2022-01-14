@@ -13,7 +13,7 @@ set cpo&vim
 " Show current IME status on cursor color. {{{
 
 let s:imet = {}
-function! s:imet.currentIME(id, data, event) abort
+function! s:imet.currentIME(id, data, event) dict abort
 py3 << EOF
 import vim
 import plistlib
