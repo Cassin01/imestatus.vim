@@ -20,12 +20,12 @@ function! imestatus#imestatus_init()
 " Vim の +timer を使ってみる
 " https://secret-garden.hatenablog.com/entry/2016/07/11/222728
 " 3000ミリ秒後に Disp() を呼び出す
-let s:timer = timer_start(1000, s:IMEt.currentIME)
+let s:timer = timer_start(1000, IMEt.currentIME)
 endfunction
     " Show current IME status on cursor color. {{{
 
-let s:IMEt = {}
-function! s:IMEt.currentIME() abort
+let IMEt = {}
+function! IMEt.currentIME() abort
 py3 << EOF
 import vim
 import plistlib
