@@ -1,5 +1,5 @@
 # imestatus.vim
-Reflect IME status and where caps or not on the cursor's color.(for mac and ime user)
+Reflect IME status and caps lock on cursor. (for mac and ime user)
 
 ## Install
 
