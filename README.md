@@ -5,7 +5,7 @@ imestatus.vim reflect IME and caps-lock on the cursor color (for mac).
 
 ### For vim-plug
 ```vim
-Plug 'Cassin/imestatus.vim'
+Plug 'Cassin01/imestatus.vim'
 ```
 
 ## Usage
