@@ -62,6 +62,7 @@ function! imestatus#imestatus_init()
 "     autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
 "     " set updatetime=10
 " augroup END
+  call s:currentIME()
 endfunction
 
 let &cpo = s:save_cpo
