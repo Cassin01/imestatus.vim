@@ -15,7 +15,7 @@ set cpo&vim
 "   autocmd!
 "   autocmd VimEnter * call imestatus#imestatus_init()
 " augroup END
-autocmd VimEnter * call imestatus#imestatus_init()
+call imestatus#imestatus_init()
 
 " 退避していたユーザ設定を戻す
 let &cpo = s:save_cpo
