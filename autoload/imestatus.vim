@@ -58,10 +58,10 @@ endfunction
 call timer_start(1000, function("s:currentIME"), {"repeat": -1})
 
 function! imestatus#imestatus_init()
-" augroup IMEInsert
-"     autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
-"     " set updatetime=10
-" augroup END
+  augroup IMEInsert
+    autocmd CursorHoldI,InsertCharPre * :call s:currentIME()
+    " set updatetime=10
+  augroup END
 endfunction
 
 let &cpo = s:save_cpo
