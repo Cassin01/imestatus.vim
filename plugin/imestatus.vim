@@ -11,11 +11,10 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-" augroup entercmd
-"   autocmd!
-"   autocmd VimEnter * call imestatus#imestatus_init()
-" augroup END
-call imestatus#imestatus_init()
+augroup entercmd
+  autocmd!
+  autocmd VimEnter * call imestatus#imestatus_init()
+augroup END
 
 " 退避していたユーザ設定を戻す
 let &cpo = s:save_cpo
